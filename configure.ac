@@ -1,0 +1,57 @@
+##########################################################################
+# If not stated otherwise in this file or this component's Licenses.txt
+# file the following copyright and licenses apply:
+#
+# Copyright 2017 RDK Management
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+##########################################################################
+#                                               -*- Autoconf -*-
+# Process this file with autoconf to produce a configure script.
+
+AC_PREREQ([2.68])
+AC_INIT([iarmmgrs-hal], [1.0], [ridish.ra@lnttechservices.com])
+AC_CONFIG_SRCDIR([ir/plat-ir.c])
+
+AM_INIT_AUTOMAKE(1.0)
+
+# Checks for programs.
+AC_PROG_CC
+
+# Checks for libtool
+LT_INIT
+
+# Libs and cflags
+IARMMGRS_HAL_IR_LIBS=""
+IARMMGRS_HAL_POWER_LIBS=""
+AC_SUBST(IARMMGRS_HAL_IR_LIBS)
+AC_SUBST(IARMMGRS_HAL_POWER_LIBS)
+
+# More libs and cflags should using pkg-config later.
+# now we just temperary hard coded here.
+IARMMGRS_HAL_IR_CFLAGS="-I$PKG_CONFIG_SYSROOT_DIR/usr/include/rdk/iarmmgrs-hal"
+IARMMGRS_HAL_POWER_CFLAGS="-I$PKG_CONFIG_SYSROOT_DIR/usr/include/rdk/iarmmgrs-hal \
+                           -I$PKG_CONFIG_SYSROOT_DIR/usr/include/rdk/iarmbus"
+AC_SUBST(IARMMGRS_HAL_IR_CFLAGS)
+AC_SUBST(IARMMGRS_HAL_POWER_CFLAGS)
+
+# Checks for header files.
+AC_CHECK_HEADERS([limits.h stdlib.h string.h sys/time.h unistd.h])
+
+# Checks for typedefs, structures, and compiler characteristics.
+
+# Checks for library functions.
+AC_FUNC_MALLOC
+
+AC_CONFIG_FILES([Makefile ir/Makefile power/Makefile])
+AC_OUTPUT
