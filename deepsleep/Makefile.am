@@ -16,11 +16,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 ##########################################################################
+lib_LTLIBRARIES = libiarmmgrs-deepsleep-hal.la
 
-# only enable deepsleep if requested
-if DEEPSLEEP_ENABLED
-SUBDIRS = ir power deepsleep
-else
-SUBDIRS = ir power
-endif
+libiarmmgrs_deepsleep_hal_la_SOURCES=plat-deepsleep.c
+
+libiarmmgrs_deepsleep_hal_la_CFLAGS=$(IARMMGRS_HAL_DS_CFLAGS)
+libiarmmgrs_deepsleep_hal_la_LIBADD=$(IARMMGRS_HAL_DS_LIBS)
 
