@@ -23,7 +23,7 @@ AC_PREREQ([2.68])
 AC_INIT([iarmmgrs-hal], [1.0], [ridish.ra@lnttechservices.com])
 AC_CONFIG_SRCDIR([ir/plat-ir.c])
 
-AM_INIT_AUTOMAKE(1.0)
+AM_INIT_AUTOMAKE([foreign 1.0])
 
 # Checks for programs.
 AC_PROG_CC
