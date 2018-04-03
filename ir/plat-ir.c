@@ -216,5 +216,6 @@ void PLAT_API_LOOP()
             }
             free(messageBuffer);
         }
+	usleep(1000);
     }
 }
