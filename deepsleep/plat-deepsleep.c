@@ -78,11 +78,13 @@ void PLAT_DS_TERM(void)
  * This function sets the current power state to Deep Sleep
  *
  * @param [in]  deep_sleep_timeout timeout for the deepsleep in seconds
- * @return None
+ * @return    Return Code.
+ * @retval    0 if successful.
  */
-void PLAT_DS_SetDeepSleep(uint32_t deep_sleep_timeout)
+int PLAT_DS_SetDeepSleep(uint32_t deep_sleep_timeout)
 {
     DEBUG_MSG("PLAT_DS_SetDeepSleep: putting to sleep, wakeup %d..\r\n", deep_sleep_timeout);
+    return 0;
 }
 
 
