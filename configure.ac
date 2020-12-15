@@ -69,6 +69,15 @@ AC_ARG_ENABLE([dsleep],
 esac],[dsleep=false])
 AM_CONDITIONAL([DEEPSLEEP_ENABLED], [test x$dsleep = xtrue])
 
+# check for termal protection
+AC_ARG_ENABLE([thermalprotection], [--enable-thermalprotection "Enable thermal protection"],
+      [case "${enableval}" in
+	       yes) thermalprotection=true ;;
+	       no)  thermalprotection=false ;;
+	       *) AC_MSG_ERROR([bad value ${enableval} for thermal protection]) ;;
+       esac], [thermalprotection=false])
+AM_CONDITIONAL([THERMAL_PROTECTION_ENABLED], [test x$thermalprotection = xtrue])
+
 AC_CONFIG_FILES([Makefile ir/Makefile power/Makefile deepsleep/Makefile])
 AC_OUTPUT
 
