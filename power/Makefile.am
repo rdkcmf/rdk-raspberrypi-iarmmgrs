@@ -21,5 +21,8 @@ lib_LTLIBRARIES = libiarmmgrs-power-hal.la
 libiarmmgrs_power_hal_la_SOURCES=plat-power.c
 
 libiarmmgrs_power_hal_la_CFLAGS=$(IARMMGRS_HAL_POWER_CFLAGS)
+if THERMAL_PROTECTION_ENABLED
+libiarmmgrs_power_hal_la_CFLAGS+=-DENABLE_THERMAL_PROTECTION
+endif
 libiarmmgrs_power_hal_la_LIBADD=$(IARMMGRS_HAL_POWER_LIBS)
 
