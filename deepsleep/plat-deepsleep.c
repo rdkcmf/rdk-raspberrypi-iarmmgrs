@@ -101,3 +101,9 @@ void PLAT_DS_DeepSleepWakeup(void)
    DEBUG_MSG("PLAT_DS_DeepSleepWakeup: waking up from deep sleep\r\n");
 }
 
+int PLAT_DS_GetLastWakeupReason(DeepSleep_WakeupReason_t *wakeupReason)
+{
+    DEBUG_MSG("PLAT_DS_GetLastWakeupReason: Get Last Wakeup Reason: DEEPSLEEP_WAKEUPREASON_UNKNOWN");
+    *wakeupReason = DEEPSLEEP_WAKEUPREASON_UNKNOWN;
+}
+
