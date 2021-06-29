@@ -107,3 +107,9 @@ int PLAT_DS_GetLastWakeupReason(DeepSleep_WakeupReason_t *wakeupReason)
     *wakeupReason = DEEPSLEEP_WAKEUPREASON_UNKNOWN;
 }
 
+int PLAT_DS_GetLastWakeupKeyCode(IARM_Bus_DeepSleepMgr_WakeupKeyCode_Param_t *wakeupKeyCode)
+{
+    DEBUG_MSG("PLAT_DS_GetLastWakeupKeyCode: Get Last Wakeup KeyCode: 0");
+    wakeupKeyCode->keyCode = 0;
+    return 0;
+}
