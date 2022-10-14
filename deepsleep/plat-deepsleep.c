@@ -40,6 +40,7 @@
 
 
 #include <stdint.h>
+#include <stdbool.h>
 
 #include "deepSleepMgr.h"
 
@@ -81,7 +82,7 @@ void PLAT_DS_TERM(void)
  * @return    Return Code.
  * @retval    0 if successful.
  */
-int PLAT_DS_SetDeepSleep(uint32_t deep_sleep_timeout)
+int PLAT_DS_SetDeepSleep(uint32_t deep_sleep_timeout, bool *isGPIOWakeup, bool networkStandby)
 {
     DEBUG_MSG("PLAT_DS_SetDeepSleep: putting to sleep, wakeup %d..\r\n", deep_sleep_timeout);
     return 0;
